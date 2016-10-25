@@ -130,12 +130,13 @@ class Bubble:
         my_pos = self.circle.getCenter()
         other_pos = other.circle.getCenter()
         distance = np.sqrt((my_pos.x - other_pos.x) ** 2 + (my_pos.y - other_pos.y) ** 2)
-        if (distance < other_radius + my_radius) and (other not in self.collisions):
+        if distance < other_radius + my_radius and (other not in self.collisions):
             self.collisions.append(other)
             return True
         else:
-            if (other in self.collisions): self.collisions.remove(other)
-            return False
+            if other in self.collisions:
+                self.collisions.remove(other)
+        return False
 
     def is_outside(self, width, height):
         my_pos = self.circle.getCenter()

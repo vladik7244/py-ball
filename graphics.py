@@ -224,7 +224,7 @@ class GraphWin(tk.Canvas):
         self.mouseX = None
         self.mouseY = None
         self.bind("<Button-1>", self._onClick)
-        self.bind("<Button-2>", self._onClick)
+        self.bind("<Button-2>", self._onClickRight)
         self.bind("<Button-3>", self._onClickRight)
         self.bind_all("<Key>", self._onKey)
         self.height = int(height)
